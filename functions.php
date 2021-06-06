@@ -1,4 +1,5 @@
 <?php
+//require_once( get_theme_file_uri( '/plugins/fictional-university-custom-post-type/custom-post-type.php' ) );
 function fictionaluni_theme_setup() {
 	add_theme_support('title-tag');
 	add_theme_support('post-thumbnails');
@@ -13,3 +14,22 @@ function fictionaluni_assets() {
 	wp_enqueue_script('scripts-js', get_theme_file_uri( '/assets/js/scripts-bundled.js'), null, '1.0', true);
 }
 add_action('wp_enqueue_scripts', 'fictionaluni_assets');
+
+function fictionaluni_adjust_query($query) {
+	if( !is_admin() && is_post_type_archive('events') && $query->is_main_query() ) {
+		$today = date('Ymd');
+//		$query->set('posts_per_page', '2');
+		$query->set('meta_key', 'event_date');
+		$query->set('orderby', 'meta_value_num');
+		$query->set('order', 'ASC');
+		$query->set('meta_query', array(
+			array(
+				'key'     => 'event_date',
+				'compare' => '>=',
+				'value'   => $today
+			)
+		));
+	}
+}
+
+add_action('pre_get_posts', 'fictionaluni_adjust_query');

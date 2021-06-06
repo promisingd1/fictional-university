@@ -21,7 +21,8 @@
 					?>">About
                             Us</a></li>
 					<li><a href="#">Programs</a></li>
-					<li><a href="#">Events</a></li>
+					<li <?php if ( get_post_type() == 'events' )
+						echo 'class="current-menu-item"' ?>><a href="<?php echo get_post_type_archive_link( 'events' ); ?>">Events</a></li>
 					<li><a href="#">Campuses</a></li>
                     <li <?php if ( get_post_type() == 'post' )
 						echo 'class="current-menu-item"' ?>><a href="<?php echo site_url( '/blog' ); ?>">Blog</a></li>

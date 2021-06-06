@@ -26,9 +26,17 @@ get_header();
 						get_the_category_list( ', ' ) ?></span></p>
 			</div>
 			<div class="generic-content">
-				<?php the_content(); ?>
+				<?php if ( has_excerpt() ) {
+					echo get_the_excerpt();
+				} else {
+                    echo wp_trim_words( get_the_content(), 20 );
+
+				} ?>
 			</div>
-		<?php endwhile; ?>
+		<?php endwhile;
+		echo paginate_links();
+		?>
+
 	</div>
 
 <?php
