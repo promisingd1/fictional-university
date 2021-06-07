@@ -6,11 +6,8 @@ get_header();
 		<div class="page-banner__bg-image" style="background-image: url(<?php echo get_theme_file_uri('/assets/images/ocean.jpg') ?>);"></div>
 		<div class="page-banner__content container container--narrow">
 			<h1 class="page-banner__title">
-				Welcome to our events
+			    <?php the_title(); ?>
 			</h1>
-			<div class="page-banner__intro">
-				<p>Join our events!</p>
-			</div>
 		</div>
 	</div>
 
@@ -29,7 +26,22 @@ get_header();
 			</div>
             <div class="generic-content">
                 <?php the_content(); ?>
-            <div>
+            </div>
+			<?php
+			$relatedPrograms = get_field( 'related_program' );
+			if ($relatedPrograms) {
+//			print_r( $relatedPrograms );
+				echo "<hr class='section-break'>";
+				echo "<h3 class='headline headline--small'>Related Program(s): </h3>";
+				echo "<ul class='link-list min-list'>";
+				foreach ( $relatedPrograms as $program ) {
+					?>
+                    <li><a href='<?php echo get_the_permalink($program) ?>'><?php echo get_the_title($program); ?></a></li>
+					<?php
+				}
+				echo "</ul>";
+            }
+			?>
         <?php endwhile;
         ?>
 	</div>
@@ -37,4 +49,3 @@ get_header();
 <?php
 get_footer();
 ?>
-<?php

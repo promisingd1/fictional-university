@@ -30,6 +30,13 @@ function fictionaluni_adjust_query($query) {
 			)
 		));
 	}
+//	Program post type query
+	if( !is_admin() && is_post_type_archive('programs') && $query->is_main_query() ) {
+		$query->set('orderby', 'title');
+		$query->set('order', 'DESC');
+		$query->set('posts_per_page', -1);
+
+	}
 }
 
 add_action('pre_get_posts', 'fictionaluni_adjust_query');
