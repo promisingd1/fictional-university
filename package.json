@@ -2,7 +2,7 @@
   "name": "fictional-university-theme",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./assets/js/scripts.js",
   "scripts": {
     "build": "wp-scripts build",
     "start": "wp-scripts start",

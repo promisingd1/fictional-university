@@ -1,5 +1,5 @@
 /* 3rd party packages */
-@import "normalize.css";
+@import "../../node_modules/normalize.css";
 @import "../../node_modules/@glidejs/glide/dist/css/glide.core.min.css";
 
 /* SASS and Global'ish Stuff */
@@ -8,23 +8,23 @@
 @import "assets/css/base/utility-classes.css";
 
 /* BEM Blocks */
-@import "modules/shame.css";
-@import "modules/login.css";
-@import "modules/btn.css";
-@import "modules/my-notes.css";
-@import "modules/site-header.css";
-@import "modules/site-footer.css";
-@import "modules/main-navigation.css";
-@import "modules/page-banner.css";
-@import "modules/hero-slider.css";
-@import "modules/search-overlay.css";
-@import "modules/professor-card.css";
-@import "modules/headline.css";
-@import "modules/generic-content.css";
-@import "modules/full-width-split.css";
-@import "modules/event-summary.css";
-@import "modules/page-links.css";
-@import "modules/acf-map.css";
-@import "modules/link-list.css";
-@import "modules/metabox.css";
-@import "modules/post-item.css";
+@import "assets/css/modules/shame.css";
+@import "assets/css/modules/login.css";
+@import "assets/css/modules/btn.css";
+@import "assets/css/modules/my-notes.css";
+@import "assets/css/modules/site-header.css";
+@import "assets/css/modules/site-footer.css";
+@import "assets/css/modules/main-navigation.css";
+@import "assets/css/modules/page-banner.css";
+@import "assets/css/modules/hero-slider.css";
+@import "assets/css/modules/search-overlay.css";
+@import "assets/css/modules/professor-card.css";
+@import "assets/css/modules/headline.css";
+@import "assets/css/modules/generic-content.css";
+@import "assets/css/modules/full-width-split.css";
+@import "assets/css/modules/event-summary.css";
+@import "assets/css/modules/page-links.css";
+@import "assets/css/modules/acf-map.css";
+@import "assets/css/modules/link-list.css";
+@import "assets/css/modules/metabox.css";
+@import "assets/css/modules/post-item.css";

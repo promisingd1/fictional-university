@@ -19,7 +19,8 @@ get_header();
 	$today = date('Ymd');
 	$pastPageEvents = new WP_Query( array(
 	    'paged'	=> get_query_var('paged', 1),
-		'post_type'      => 'events',
+		'posts_per_page' => 1,
+		'post_type'      => 'event',
 		'meta_key' => 'event_date',
 		'orderby' => 'meta_value_num',
 		'order' => 'DESC',
@@ -59,7 +60,7 @@ get_header();
 						echo wp_trim_words( get_the_content(), 20 );
 
 					} ?>
-					<a href="<?php the_permalink(); ?>" class="nu gray">Read More</a>
+					<a href="<?php the_permalink(); ?>" class="nu gray"> Read More</a>
 				</p>
 			</div>
 		</div>

@@ -22,7 +22,7 @@ get_header();
                 $today = date('Ymd');
 				$homePageEvents = new WP_Query( array(
 					'posts_per_page' => 2,
-					'post_type'      => 'events',
+					'post_type'      => 'event',
                     'meta_key' => 'event_date',
                     'orderby' => 'meta_value_num',
                     'order' => 'DESC',
@@ -39,7 +39,7 @@ get_header();
 					$homePageEvents->the_post();
 					?>
                     <div class="event-summary">
-                        <a class="event-summary__date t-center" href="#">
+                        <a class="event-summary__date t-center" href="<?php get_post_type_archive_link( 'event' ) ?>">
                             <span class="event-summary__month">
                                 <?php
                                 $eventDate = new DateTime( get_field( 'event_date', false, false ) );
@@ -57,14 +57,14 @@ get_header();
                             ?>"><?php the_title(); ?></a></h5>
                             <p><?php echo wp_trim_words( get_the_content(), 20 ); ?><a href="<?php the_permalink();
                             ?>" class="nu
-                            gray">Read More</a></p>
+                            gray"> Read more </a></p>
                         </div>
                     </div>
-				<?php
+                <?php
 				endwhile;
 				wp_reset_postdata();
 				?>
-				<p class="t-center no-margin"><a href="<?php echo get_post_type_archive_link( 'events' ); ?>" class="btn
+				<p class="t-center no-margin"><a href="<?php echo get_post_type_archive_link( 'event' ); ?>" class="btn
 				btn--blue">View All
                         Events</a></p>
 			</div>
@@ -93,9 +93,14 @@ get_header();
                             <h5 class="event-summary__title headline headline--tiny"><a href="<?php the_permalink();
 		                        ?>"><?php the_title(); ?></a></h5>
                             <p>
-		                        <?php echo wp_trim_words( get_the_content(),
-			                        20 )
-		                        ?><a href="<?php the_permalink(); ?>" class="nugray">Read more</a>
+	                            <?php
+		                            if ( has_excerpt() ) {
+			                            echo get_the_excerpt();
+		                            } else {
+			                            echo wp_trim_words( get_the_content(), 15 );
+		                            }
+	                            ?>
+                                <a href="<?php the_permalink(); ?>" class="nugray">Read more</a>
                             </p>
                         </div>
                     </div>

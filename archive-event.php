@@ -8,6 +8,11 @@ get_header();
 		<h1 class="page-banner__title">
 		    All Events
 		</h1>
+        <div class="page-banner__intro">
+            <p>
+                See what's going on in our world
+            </p>
+        </div>
 	</div>
 </div>
 
