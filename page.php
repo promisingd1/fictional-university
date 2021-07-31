@@ -5,21 +5,14 @@
 		?>
 
         <!--        Page Banner Section -->
-        <div class="page-banner">
-            <div class="page-banner__bg-image"
-                 style="background-image: url(<?php echo get_theme_file_uri( '/assets/images/ocean.jpg' ) ?>);"></div>
-            <div class="page-banner__content container container--narrow">
-                <h1 class="page-banner__title">
-					<?php the_title(); ?>
-                </h1>
-                <div class="page-banner__intro">
-                    <p>Learn how the school of your dreams got started.</p>
-                </div>
-            </div>
-        </div>
+		<?php
+		pageBanner( array(
+			'subtitle' => "Learn how the school of your dreams got started.",
+			'photo'    => 'https://images.unsplash.com/photo-1593642634402-b0eb5e2eebc9?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80'
+		) ); ?>
+
 
         <div class="container container--narrow page-section">
-
             <!-- Breadcrumb Area -->
 			<?php
 				$parentPage = wp_get_post_parent_id( get_the_ID() );

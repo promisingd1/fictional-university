@@ -1652,7 +1652,7 @@ body.admin-bar .search-overlay {
 .link-list li {
     padding: 1rem 0;
     font-size: 1.5rem;
-    border-bottom: 1px dotted #DEDEDE;
+    border-bottom: 1px dotted #4D4B4B;
 }
 .search-overlay .link-list li {
     font-size: 1.3rem;
