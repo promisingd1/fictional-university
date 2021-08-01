@@ -2,6 +2,7 @@
 	get_header();
 	pageBanner( array(
 		'title'    => 'Our Campuses',
+        'subtitle' => 'We have several conveniently located campuses'
 	) );
 ?>
 

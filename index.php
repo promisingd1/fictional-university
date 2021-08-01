@@ -29,12 +29,14 @@
 		                get_the_category_list( ', ' ) ?></p>
                 </div>
                 <div class="generic-content">
-	                <?php if ( has_excerpt() ) {
-	                    the_excerpt();
-	                } else {
-	                    echo wp_trim_words( get_the_content(), 30 );
-	                }
+                    <p>
+                        <?php if ( has_excerpt() ) {
+                            the_excerpt();
+                        } else {
+                            echo wp_trim_words( get_the_content(), 30 );
+                        }
 	                ?>
+                    </p>
                     <p>
                         <a class="btn btn--blue" href="<?php the_permalink(); ?>">Continue reading &raquo</a>
                     </p>
