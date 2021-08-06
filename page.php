@@ -15,6 +15,7 @@
         <div class="container container--narrow page-section">
             <!-- Breadcrumb Area -->
 			<?php
+//                Getting parent page id
 				$parentPage = wp_get_post_parent_id( get_the_ID() );
 				if ( $parentPage ) :
 					?>
@@ -29,13 +30,11 @@
 				<?php
 				endif;
 
-				//  Getting the children of a parent page. get_the_id() will return an array if there's child page
-                // else it'll return an empty array
+				//  Getting the children of a parent page.
 				$isParent = get_pages( array(
 					'child_of' => get_the_ID()
 				) );
 
-				//  Checking whether the page has parent or is parent
 				if ( $parentPage or $isParent ) :
 					?>
                     <div class="page-links">

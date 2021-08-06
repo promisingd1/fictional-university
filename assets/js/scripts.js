@@ -13,6 +13,7 @@ const mobileMenu = new MobileMenu()
 const heroSlider = new HeroSlider()
 const search = new Search()
 
+console.log(search);
 // Allow new JS and CSS to load in browser without a traditional page refresh
 /*if (module.hot) {
   module.hot.accept()
